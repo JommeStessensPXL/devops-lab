@@ -1,0 +1,15 @@
+name: Steps Examples
+on:  
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Maak directory testmachine aan
+      run: mdkir testmachine
+    - name: Run command uname
+      run: uname -a > testmachine/output.txt
+    - name: Verification step that shows content of txt file
+      run: cat testmachine/output.txt
+    - run: ls -alhR 
